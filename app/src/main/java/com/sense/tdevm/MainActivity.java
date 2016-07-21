@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
+    public static final String TAG = "MainActivity";
     Button myButton;
     SensorManager sensorManager;
     @Override
@@ -68,6 +69,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
-
+        Log.d(TAG, "onAccuracyChanged");
     }
 }
