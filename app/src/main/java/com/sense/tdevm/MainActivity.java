@@ -29,9 +29,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         Sensor accelSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorManager.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_UI);
-
     }
-
     @Override
     public void onSensorChanged(final SensorEvent sensorEvent) {
         myButton = (Button)findViewById(R.id.start);
@@ -66,9 +64,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             }
         });
     }
-
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
         Log.d(TAG, "onAccuracyChanged");
     }
+
+    @Override
+    protected void onStop() {
+        sensorManager.unregisterListener(this);
+        super.onStop();
+    }
+
 }
