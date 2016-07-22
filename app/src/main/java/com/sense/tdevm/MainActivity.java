@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onStop() {
         sensorManager.unregisterListener(this);
         super.onStop();
+
     }
 
 }
