@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         Log.d(TAG, "onAccuracyChanged");
     }
 
+
     @Override
     protected void onStop() {
         sensorManager.unregisterListener(this);
